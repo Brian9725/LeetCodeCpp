@@ -21,12 +21,12 @@ public:
 	}
 };
 
-int main() {
-	vector<int> temp;
-	temp.push_back(2);
-	temp.push_back(7);
-	temp.push_back(11);
-	temp.push_back(15);
-	cout << Solution().twoSum(temp, 9)[0] << " " << Solution().twoSum(temp, 9)[1];
-	return 0;
-}
+//int main() {
+//	vector<int> temp;
+//	temp.push_back(2);
+//	temp.push_back(7);
+//	temp.push_back(11);
+//	temp.push_back(15);
+//	cout << Solution().twoSum(temp, 9)[0] << " " << Solution().twoSum(temp, 9)[1];
+//	return 0;
+//}
