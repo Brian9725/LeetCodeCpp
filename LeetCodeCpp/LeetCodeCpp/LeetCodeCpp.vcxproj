@@ -155,6 +155,7 @@
     <ClCompile Include="leetcode-5.cpp" />
     <ClCompile Include="leetcode-51.cpp" />
     <ClCompile Include="leetcode-52.cpp" />
+    <ClCompile Include="leetcode-6.cpp" />
     <ClCompile Include="leetcode-60.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
