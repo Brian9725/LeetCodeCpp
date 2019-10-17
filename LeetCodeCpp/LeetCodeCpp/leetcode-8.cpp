@@ -4,6 +4,7 @@ using namespace std;
 class Solution {
 public:
 	int myAtoi(string str) {
+		//flag标识正负
 		int flag = 1, idx = 0, result = 0;
 		for (; str[idx] == ' '; idx++) {
 			continue;
