@@ -13,7 +13,7 @@ public:
 		if (sum > target) {
 			return;
 		}
-		//begin保证每次加入tempResult的数字的下标在candidates中时非递减的，保证结果不重复
+		//begin保证每次加入tempResult的数字的下标在candidates中是非递减的，保证结果不重复
 		for (int i = begin; i < len; i++) {
 			tempResult.push_back(candidates[i]);
 			dfs(result, tempResult, candidates, target, sum + candidates[i], i, len);
