@@ -147,6 +147,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="leetcode-1.cpp" />
+    <ClCompile Include="leetcode-11.cpp" />
     <ClCompile Include="leetcode-118.cpp" />
     <ClCompile Include="leetcode-16.cpp" />
     <ClCompile Include="leetcode-18.cpp" />
