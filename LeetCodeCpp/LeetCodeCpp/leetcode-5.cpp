@@ -12,12 +12,10 @@ public:
 		//初始化dp数组，dp[i][j]保存以s[i,j]是否为一个回文串
 		for (int i = 0; i < len; i++) {
 			for (int j = 0; j < len; j++) {
-				if (i == j) {
+				if (i == j) 
 					dp[i][j] = 1;
-				}
-				else {
+				else 
 					dp[i][j] = -1;
-				}
 			}
 		}
 		//这里i表示回文串的长度，j表示回文串第1个元素的下标
@@ -30,9 +28,8 @@ public:
 						head = j;
 						tail = j + 1;
 					}
-					else {
+					else 
 						dp[j][j + 1] = 0;
-					}
 				}
 				//如果当前判断的回文串长度不是2则需判断s[j]=s[j+i-1]和s[j+1,j+i-2]是否为回文串
 				else {
@@ -41,9 +38,8 @@ public:
 						head = j;
 						tail = j + i - 1;
 					}
-					else {
+					else 
 						dp[j][j + i - 1] = 0;
-					}
 				}
 			}
 		}
