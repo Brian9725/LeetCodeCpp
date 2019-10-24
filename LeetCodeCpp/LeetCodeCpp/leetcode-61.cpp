@@ -10,26 +10,23 @@ struct ListNode {
 class Solution {
 public:
 	ListNode* rotateRight(ListNode* head, int k) {
-		if (head == NULL || k == 0)
+		if (head == NULL || head->next == NULL || k == 0)
 			return head;
 		//len表示为链表的长度
 		int len = 1;
-		ListNode *temp = head, *tempHead = head, *pre = new ListNode(0);
+		ListNode *temp = head;
 		while (temp->next) {
 			temp = temp->next;
 			len++;
 		}
+		temp->next = head;
 		//右移k次相当于将倒数k个结点放在链表头，从head向右移len-k%len次到达倒数第k个结点
 		k = len - k % len;
-		if (k == len)
-			return head;
-		pre->next = head;
 		while (k--) {
 			head = head->next;
-			pre = pre->next;
+			temp = temp->next;
 		}
-		pre->next = NULL;
-		temp->next = tempHead;
+		temp->next = NULL;
 		return head;
 	}
 };
