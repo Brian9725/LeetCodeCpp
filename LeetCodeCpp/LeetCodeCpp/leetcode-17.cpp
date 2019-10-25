@@ -25,9 +25,8 @@ public:
 	vector<string> letterCombinations(string digits) {
 		vector<string> results;
 		int len = digits.size();
-		if (len == 0) {
+		if (len == 0) 
 			return results;
-		}
 		string result = "";
 		dfs(digits, results, result, 0, len);
 		return results;

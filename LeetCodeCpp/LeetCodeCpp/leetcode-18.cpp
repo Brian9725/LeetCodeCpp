@@ -11,13 +11,11 @@ public:
 		vector<vector<int>> result;
 		for (int i = 0; i < len - 3; i++) {
 			//如果nums[i]前面出现过，为了保证解不重复需要将其略过，下同
-			if (i > 0 && nums[i] == nums[i - 1]) {
+			if (i > 0 && nums[i] == nums[i - 1]) 
 				continue;
-			}
 			for (int j = i + 1; j < len - 2; j++) {
-				if (j > i + 1 && nums[j] == nums[j - 1]) {
+				if (j > i + 1 && nums[j] == nums[j - 1]) 
 					continue;
-				}
 				for (int head = j + 1, tail = len - 1; head < tail;) {
 					if (head > j + 1 && nums[head] == nums[head - 1]) {
 						head++;
@@ -28,12 +26,10 @@ public:
 						continue;
 					}
 					sum = nums[i] + nums[j] + nums[head] + nums[tail];
-					if (sum > target) {
+					if (sum > target) 
 						tail--;
-					}
-					else if (sum < target) {
+					else if (sum < target) 
 						head++;
-					}
 					else {
 						vector<int> temp;
 						temp.push_back(nums[i]);

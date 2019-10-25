@@ -6,9 +6,8 @@ class Solution {
 public:
 	string longestCommonPrefix(vector<string>& strs) {
 		int strsSize = strs.size();
-		if (strsSize == 0) {
+		if (strsSize == 0) 
 			return "";
-		}
 		string result = "";
 		for (int i = 0; i < strsSize; i++) {
 			if (strs[i].size() == 0 || strs[i][0] != strs[0][0])

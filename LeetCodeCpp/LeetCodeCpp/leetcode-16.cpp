@@ -17,15 +17,12 @@ public:
 					dis = abs(sum - target);
 					result = sum;
 				}
-				if (sum > target) {
+				if (sum > target) 
 					tail--;
-				}
-				else if (sum < target) {
+				else if (sum < target) 
 					head++;
-				}
-				else {
+				else 
 					return target;
-				}
 			}
 		}
 		return result;
