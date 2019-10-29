@@ -19,16 +19,14 @@ public:
 		//使用BFS，一个队列记录结点，一个队列记录对应的几点是第几层
 		queue<TreeNode*> qNode;
 		queue<int> qLv;
-		qNode.push(root);
-		qLv.push(0);
+		qNode.push(root); qLv.push(0);
 		vector<int> tempRes;
 		int cur = 0;
 		while (!qNode.empty()) {
 			//逻辑保证每次取出的tempNode不为NULL
 			TreeNode* tempNode = qNode.front();
 			int tempLv = qLv.front();
-			qNode.pop();
-			qLv.pop();
+			qNode.pop(); qLv.pop();
 			if (tempLv != cur) {
 				result.push_back(tempRes);
 				tempRes.clear();
