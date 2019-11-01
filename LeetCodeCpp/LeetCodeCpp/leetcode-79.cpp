@@ -19,7 +19,7 @@ public:
 			visit[row - 1][col] = 0;
 		}
 		//检查当前位置下方一个字符
-		if (row < board.size() - 1 && visit[row + 1][col] == 0 && board[row + 1][col] == word[idx]) {
+		if (row < (int)board.size() - 1 && visit[row + 1][col] == 0 && board[row + 1][col] == word[idx]) {
 			visit[row + 1][col] = 1;
 			dfs(board, visit, idx + 1, word, row + 1, col, flag);
 			visit[row + 1][col] = 0;
@@ -31,7 +31,7 @@ public:
 			visit[row][col - 1] = 0;
 		}
 		//检查当前位置右方一个字符
-		if (col < board[0].size() - 1 && visit[row][col + 1] == 0 && board[row][col + 1] == word[idx]) {
+		if (col < (int)board[0].size() - 1 && visit[row][col + 1] == 0 && board[row][col + 1] == word[idx]) {
 			visit[row][col + 1] = 1;
 			dfs(board, visit, idx + 1, word, row, col + 1, flag);
 			visit[row][col + 1] = 0;
