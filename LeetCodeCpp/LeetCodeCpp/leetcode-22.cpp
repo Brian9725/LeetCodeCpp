@@ -11,24 +11,20 @@ public:
 			return;
 		}
 		//如果剩余的'('比')'多，则此时str已经不符合要求
-		if (left > right) {
+		if (left > right) 
 			return;
-		}
 		//向str中加入'('
-		if (left > 0) {
+		if (left > 0) 
 			dfs(result, str + '(', left - 1, right);
-		}
 		//向str中加入')'
-		if (right > 0) {
+		if (right > 0) 
 			dfs(result, str + ')', left, right - 1);
-		}
 	}
 
 	vector<string> generateParenthesis(int n) {
 		vector<string> result;
-		if (n <= 0) {
+		if (n <= 0) 
 			return result;
-		}
 		dfs(result, "", n, n);
 		return result;
 	}

@@ -20,17 +20,14 @@ public:
 		bool isP = true;
 		//防止dividend转为正数时溢出
 		if (dividend == INT_MIN) {
-			dividend += abs(divisor);
-			result++;
+			dividend += abs(divisor); result++;
 		}
 		//将dividend和divisor转为正数并标记结果的正负
 		if (dividend <= 0) {
-			dividend = -dividend;
-			isP = !isP;
+			dividend = -dividend; isP = !isP;
 		}
 		if (divisor < 0) {
-			divisor = -divisor;
-			isP = !isP;
+			divisor = -divisor; isP = !isP;
 		}
 		for (int i = 31; i >= 0; i--) {
 			if ((dividend >> i) >= divisor) {

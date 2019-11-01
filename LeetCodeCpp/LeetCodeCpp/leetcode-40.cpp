@@ -10,16 +10,14 @@ public:
 			result.push_back(tempResult);
 			return;
 		}
-		if (sum > target) {
+		if (sum > target) 
 			return;
-		}
 		//begin保证每次加入tempResult的数字的下标在candidates中是递增的，保证结果不重复
 		//每调用一次for循环，就是向tempResult的新的位置加入一个数
 		for (int i = begin; i < len; i++) {
 			//如果candidates[i]不是加入tempResult当前位置的第一个数并且和前一个数值相同，则表明tempResult当前位置为candidates[i]的情况已经在result中
-			if (i > begin && candidates[i] == candidates[i - 1]) {
+			if (i > begin && candidates[i] == candidates[i - 1]) 
 				continue;
-			}
 			tempResult.push_back(candidates[i]);
 			dfs(result, tempResult, candidates, target, sum + candidates[i], i + 1, len);
 			tempResult.pop_back();

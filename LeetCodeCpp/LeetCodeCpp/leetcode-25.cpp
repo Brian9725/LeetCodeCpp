@@ -21,13 +21,11 @@ public:
 			if (temp4 != NULL)
 				temp4 = temp4->next;
 			else {
-				flag = false;
-				break;
+				flag = false; break;
 			}
 		}
 		if (flag && temp4 != NULL) {
-			head = temp4;
-			temp4 = temp1->next;
+			head = temp4; temp4 = temp1->next;
 		}
 		else 
 			return head;
@@ -36,16 +34,14 @@ public:
 			if (temp4 == NULL)
 				break;
 			bool flag = true;
-			temp2 = temp1->next;
-			temp3 = temp2->next;
+			temp2 = temp1->next; temp3 = temp2->next;
 			//将temp4指向第k+1个结点
 			temp4 = temp2;
 			for (int i = 0; i < k; i++) {
 				if (temp4 != NULL)
 					temp4 = temp4->next;
 				else {
-					flag = false;
-					break;
+					flag = false; break;
 				}
 			}
 			if (!flag)
@@ -54,13 +50,9 @@ public:
 			//将k个结点从第1个开始依次接到temp4的前面
 			while (temp3->next != temp4) {
 				temp2->next = temp;
-				temp = temp2;
-				temp2 = temp3;
-				temp3 = temp2->next;
+				temp = temp2; temp2 = temp3; temp3 = temp2->next;
 			}
-			temp2->next = temp;
-			temp3->next = temp2;
-			temp1->next = temp3;
+			temp2->next = temp; temp3->next = temp2; temp1->next = temp3;
 			//将temp1移动到第k个结点
 			while (temp1->next != temp4)
 				temp1 = temp1->next;
@@ -74,8 +66,7 @@ public:
 		int count = 0;
 		//将pre指向第k+1个结点
 		while (pre != NULL && count < k) {
-			pre = pre->next;
-			count++;
+			pre = pre->next; count++;
 		}
 		if (count == k) {
 			//对后面的链进行递归交换
@@ -83,9 +74,7 @@ public:
 			//将最前面的结点加到pre的前面，循坏k次，完成k个结点的翻转
 			while (count > 0) {
 				ListNode* temp = head->next;
-				head->next = pre;
-				pre = head;
-				head = temp;
+				head->next = pre; pre = head; head = temp;
 				count--;
 			}
 			head = pre;

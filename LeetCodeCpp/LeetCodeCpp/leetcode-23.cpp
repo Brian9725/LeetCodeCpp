@@ -21,34 +21,26 @@ public:
 	//使用优先队列
 	ListNode* mergeKLists(vector<ListNode*>& lists) {
 		int len = lists.size();
-		if (len == 0) {
+		if (len == 0) 
 			return NULL;
-		}
 		priority_queue<ListNode*, vector<ListNode*>, cmp> pq;
 		ListNode *result = NULL, *temp = NULL;
 		//将每个链表首元素的指针放入优先队列，初始化优先队列
 		for (int i = 0; i < len; i++) {
-			if (lists[i] != NULL) {
+			if (lists[i] != NULL) 
 				pq.push(lists[i]);
-			}
 		}
-		if (pq.empty()) {
+		if (pq.empty()) 
 			return NULL;
-		}
 		//将pq中最小元素设置为头结点
-		result = pq.top();
-		temp = result;
-		pq.pop();
-		if (temp->next != NULL) {
+		result = pq.top(); temp = result; pq.pop();
+		if (temp->next != NULL) 
 			pq.push(temp->next);
-		}
 		//每将pq中某个链表的结点pop，便要加入该链表的下一个结点
 		while (!pq.empty()) {
-			temp->next = pq.top();
-			pq.pop();
-			if (temp->next->next != NULL) {
+			temp->next = pq.top(); pq.pop();
+			if (temp->next->next != NULL) 
 				pq.push(temp->next->next);
-			}
 			temp = temp->next;
 		}
 		return result;
@@ -59,22 +51,18 @@ public:
 	ListNode* merge(ListNode *l1, ListNode *l2) {
 		ListNode *result = NULL, *temp = NULL;
 		if (l1->val < l2->val) {
-			result = l1;
-			l1 = l1->next;
+			result = l1; l1 = l1->next;
 		}
 		else {
-			result = l2;
-			l2 = l2->next;
+			result = l2; l2 = l2->next;
 		}
 		temp = result;
 		while (l1 && l2) {
 			if (l1->val < l2->val) {
-				temp->next = l1;
-				l1 = l1->next;
+				temp->next = l1; l1 = l1->next;
 			}
 			else {
-				temp->next = l2;
-				l2 = l2->next;
+				temp->next = l2; l2 = l2->next;
 			}
 			temp = temp->next;
 		}
