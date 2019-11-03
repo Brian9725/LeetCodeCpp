@@ -7,13 +7,11 @@ class Solution {
 public:
 	void dfs(vector<char>& tempResult, int *nums, int *visit, int idx, int n, int& cnt, int k) {
 		//cnt计数已经产生第几个排列
-		if (cnt == k) {
+		if (cnt == k)
 			return;
-		}
 		//idx为已经装入tempResult的字符个数
 		if (idx == n) {
-			cnt++;
-			return;
+			cnt++; return;
 		}
 		for (int i = 0; i < n; i++) {
 			if (visit[i] == 0) {
@@ -21,29 +19,26 @@ public:
 				visit[i] = 1;
 				dfs(tempResult, nums, visit, idx + 1, n, cnt, k);
 				//一旦产生第k个排列，要避免进行pop操作以保存tempResult
-				if (cnt == k) {
+				if (cnt == k)
 					return;
-				}
 				tempResult.pop_back();
 				visit[i] = 0;
 			}
 		}
 	}
-	
+
 	string getPermutation(int n, int k) {
 		//nums记录n个整数，visit记录n个整数是否被装入
 		int *nums = new int[n], *visit = new int[n];
 		int cnt = 0;
 		for (int i = 0; i < n; i++) {
-			nums[i] = i + 1;
-			visit[i] = 0;
+			nums[i] = i + 1; visit[i] = 0;
 		}
 		vector<char> tempResult;
 		dfs(tempResult, nums, visit, 0, n, cnt, k);
 		string str = "";
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < n; i++)
 			str += tempResult[i];
-		}
 		return str;
 	}
 
@@ -71,9 +66,8 @@ public:
 		string num = "123456789";
 		//f[i-1]中保存了i的阶乘
 		vector<int> f(n, 1);
-		for (int i = 1; i < n; i++) {
+		for (int i = 1; i < n; i++) 
 			f[i] = f[i - 1] * i;
-		}
 		//将k减1是为了让[0,i!-1]个排列对应到num[i-1]
 		k--;
 		//i表示现在有几个数

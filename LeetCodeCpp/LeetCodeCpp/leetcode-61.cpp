@@ -16,8 +16,7 @@ public:
 		int len = 1;
 		ListNode *temp = head;
 		while (temp->next) {
-			temp = temp->next;
-			len++;
+			temp = temp->next; len++;
 		}
 		temp->next = head;
 		//右移k次相当于将倒数k个结点放在链表头，从head向右移len-k%len次到达倒数第k个结点

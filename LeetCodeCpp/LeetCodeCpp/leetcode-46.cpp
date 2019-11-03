@@ -26,9 +26,8 @@ public:
 		//visit记录第i个元素有没有被装入
 		int len = nums.size(), *visit = new int[len];
 		//初始化visit数组
-		for (int i = 0; i < len; i++) {
+		for (int i = 0; i < len; i++) 
 			visit[i] = 0;
-		}
 		vector<vector<int>> result;
 		vector<int> tempResult;
 		dfs(result, tempResult, nums, visit, 0, len);

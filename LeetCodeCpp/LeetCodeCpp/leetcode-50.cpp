@@ -22,8 +22,7 @@ public:
 		//flag标记n的正负
 		int flag = 1;
 		if (n < 0) {
-			flag = 0;
-			n = -n;
+			flag = 0; n = -n;
 		}
 		if (flag)
 			return dfsPow(x, n);
