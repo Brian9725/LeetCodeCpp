@@ -12,7 +12,7 @@ struct TreeNode {
 
 class Solution {
 public:
-	void dfs(vector<string> &result, string str, TreeNode* node) {
+	void dfs(vector<string>& result, string str, TreeNode* node) {
 		if (node->left == NULL && node->right == NULL) {
 			result.push_back(str);
 			return;

@@ -12,8 +12,7 @@ public:
 				cnt++;
 			else {
 				if (cnt == 0) {
-					result = nums[i];
-					cnt = 1;
+					result = nums[i]; cnt = 1;
 				}
 				cnt--;
 			}

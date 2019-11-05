@@ -38,8 +38,7 @@ public:
 		//一次判断tempA与tempB是否相等直到找到公共结点
 		while (lenB--) {
 			if (tempA == tempB) {
-				result = tempA;
-				break;
+				result = tempA; break;
 			}
 			tempA = tempA->next;
 			tempB = tempB->next;

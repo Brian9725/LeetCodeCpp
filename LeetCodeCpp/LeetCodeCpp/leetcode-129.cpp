@@ -10,7 +10,7 @@ struct TreeNode {
 
 class Solution {
 public:
-	void dfs(int &result, int &tempRes, TreeNode* node) {
+	void dfs(int& result, int& tempRes, TreeNode* node) {
 		if (node->left == NULL && node->right == NULL) {
 			tempRes = tempRes * 10 + node->val;
 			result += tempRes;

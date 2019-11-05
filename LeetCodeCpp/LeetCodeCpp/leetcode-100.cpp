@@ -15,13 +15,11 @@ public:
 			return;
 		if (p == NULL && q == NULL)
 			return;
-		else if ((p == NULL && q != NULL) || (p != NULL&&q == NULL)) {
-			flag = false;
-			return;
+		else if ((p == NULL && q != NULL) || (p != NULL && q == NULL)) {
+			flag = false; return;
 		}
 		if (p->val != q->val) {
-			flag = false;
-			return;
+			flag = false; return;
 		}
 		dfs(p->left, q->left, flag);
 		dfs(p->right, q->right, flag);
