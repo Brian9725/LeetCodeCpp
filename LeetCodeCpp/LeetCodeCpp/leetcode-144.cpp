@@ -18,8 +18,9 @@ public:
 			return result;
 		stack<TreeNode*> treeStack;
 		treeStack.push(root);
+		TreeNode *temp = root;
 		while (!treeStack.empty()) {
-			TreeNode *temp = treeStack.top(); treeStack.pop();
+			temp = treeStack.top(); treeStack.pop();
 			result.push_back(temp->val);
 			//先将右孩子入栈保证左孩子先出栈被访问
 			if (temp->right)

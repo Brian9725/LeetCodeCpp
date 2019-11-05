@@ -17,6 +17,7 @@ public:
 		stack<TreeNode*> treeStack;
 		TreeNode *temp = root;
 		while (temp != NULL || !treeStack.empty()) {
+			//只有temp到达最左子结点或者当前结点左孩子的最右子结点时才为NULL
 			//找到当前结点的最左子结点，该结点为以当前结点为根的树最先访问的结点
 			while (temp != NULL) {
 				treeStack.push(temp);
