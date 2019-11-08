@@ -81,8 +81,3 @@ public:
 	}
 	*/
 };
-
-//int main() {
-//	Solution().getPermutation(9, 3);
-//	return 0;
-//}
