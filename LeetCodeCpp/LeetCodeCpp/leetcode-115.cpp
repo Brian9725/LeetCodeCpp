@@ -27,6 +27,6 @@ public:
 				dp[i][j] = dp[i][j - 1] + (t[i - 1] == s[j - 1] ? dp[i - 1][j - 1] : 0);
 			}
 		}
-		return dp[lenT][lenS];
+		return (int)dp[lenT][lenS];
 	}
 };
