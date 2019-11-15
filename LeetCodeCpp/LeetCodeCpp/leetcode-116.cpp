@@ -40,22 +40,17 @@ public:
 	}
 
 	/*递归方法
-	void dfs(Node* node) {
-		if (node->left) {
-			//左孩子的next为右孩子
-			node->left->next = node->right;
-			//右孩子的next为父节点next的左孩子
-			if (node->next) {
-				node->right->next = node->next->left;
-			}
-			dfs(node->left);
-			dfs(node->right);
-		}
-	}
-
 	Node* connect(Node* root) {
-		if (root != NULL) 
-			dfs(root);
+		if (root != NULL && root->left != NULL) {
+			//左孩子的next为右孩子
+			root->left->next = root->right;
+			//右孩子的next为父节点next的左孩子
+			if (root->next) {
+				root->right->next = root->next->left;
+			}
+			connect(root->left);
+			connect(root->right);
+		}
 		return root;
 	}
 	*/
