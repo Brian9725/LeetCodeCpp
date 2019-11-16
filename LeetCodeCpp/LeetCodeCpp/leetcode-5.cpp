@@ -6,7 +6,7 @@ int dp[1005][1005];
 
 class Solution {
 public:
-	//此为动态规划算法，时间复杂度O(n?)，还有一种Manacher算法，时间复杂度O(n)
+	//此为动态规划算法，时间复杂度O(n*n)，还有一种Manacher算法，时间复杂度O(n)
 	string longestPalindrome(string s) {
 		int len = s.size(), head = 0, tail = 0;
 		//初始化dp数组，dp[i][j]保存以s[i,j]是否为一个回文串
