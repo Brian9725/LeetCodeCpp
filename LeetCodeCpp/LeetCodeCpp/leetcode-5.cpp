@@ -9,7 +9,7 @@ public:
 	//此为动态规划算法，时间复杂度O(n*n)，还有一种Manacher算法，时间复杂度O(n)
 	string longestPalindrome(string s) {
 		int len = s.size(), head = 0, tail = 0;
-		//初始化dp数组，dp[i][j]保存以s[i,j]是否为一个回文串
+		//初始化dp数组，dp[i][j]保存s[i,j]是否为一个回文串
 		for (int i = 0; i < len; i++) {
 			for (int j = 0; j < len; j++) {
 				if (i == j) 
