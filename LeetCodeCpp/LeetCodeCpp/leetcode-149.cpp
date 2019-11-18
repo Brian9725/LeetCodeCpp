@@ -58,11 +58,3 @@ public:
 		return res;
 	}
 };
-
-int main() {
-	vector<vector<int>> points;
-	vector<int> p1; p1.push_back(0); p1.push_back(0); points.push_back(p1);
-	vector<int> p2; p2.push_back(1); p2.push_back(1); points.push_back(p2);
-	vector<int> p3; p3.push_back(0); p3.push_back(0); points.push_back(p3);
-	cout << Solution().maxPoints(points);
-}
