@@ -2,7 +2,62 @@
 #include<string>
 using namespace std;
 
-//孩子兄弟法表示树
+struct mTreeNode {
+	bool end;
+	mTreeNode* child[26];
+	mTreeNode() : end(false) {
+		memset(child, 0, sizeof(child));
+	}
+};
+
+class Trie {
+public:
+	mTreeNode *root = NULL;
+
+	/** Initialize your data structure here. */
+	Trie() {
+		root = new mTreeNode();
+	}
+
+	/** Inserts a word into the trie. */
+	void insert(string word) {
+		int len = word.size();
+		mTreeNode *cur = root;
+		for (int i = 0; i < len; i++) {
+			if (cur->child[word[i] - 'a'] == NULL)
+				cur->child[word[i] - 'a'] = new mTreeNode();
+			cur = cur->child[word[i] - 'a'];
+		}
+		cur->end = true;
+	}
+
+	/** Returns if the word is in the trie. */
+	bool search(string word) {
+		int len = word.size();
+		mTreeNode *cur = root;
+		for (int i = 0; i < len; i++) {
+			if (cur->child[word[i] - 'a'] == NULL)
+				return false;
+			cur = cur->child[word[i] - 'a'];
+		}
+		return cur->end;
+	}
+
+	/** Returns if there is any word in the trie that starts with the given prefix. */
+	bool startsWith(string prefix) {
+		int len = prefix.size();
+		mTreeNode *cur = root;
+		for (int i = 0; i < len; i++) {
+			if (cur->child[prefix[i] - 'a'] == NULL)
+				return false;
+			cur = cur->child[prefix[i] - 'a'];
+		}
+		return true;
+	}
+};
+
+
+/*孩子兄弟法表示树
 struct mTreeNode {
 	char val;
 	bool end;
@@ -15,29 +70,21 @@ class Trie {
 public:
 	mTreeNode *root;
 
-	/** Initialize your data structure here. */
+	//初始化前缀树
 	Trie() {
 		root = new mTreeNode('#');
 	}
 
-	/** Inserts a word into the trie. */
+	//插入单词
 	void insert(string word) {
-		if (word == "ben") {
-			int aaa = 1;
-		}
 		int len = word.size();
 		mTreeNode *cur = root;
 		for (int i = 0; i < len; i++) {
 			if (cur->child == NULL) {
-				mTreeNode *temp = new mTreeNode(word[i]);
-				if (i == len - 1)
-					temp->end = true;
-				cur->child = temp;
+				cur->child = new mTreeNode(word[i]);
 				cur = cur->child;
 			}
 			else if (cur->child->val == word[i]) {
-				if (i == len - 1)
-					cur->child->end = true;
 				cur = cur->child;
 			}
 			else {
@@ -49,14 +96,13 @@ public:
 					mTreeNode *temp = new mTreeNode(word[i]);
 					cur->brother = temp;
 				}
-				if (i == len - 1)
-					cur->brother->end = true;
 				cur = cur->brother;
 			}
 		}
+		cur->end = true;
 	}
 
-	/** Returns if the word is in the trie. */
+	//搜索单词
 	bool search(string word) {
 		int len = word.size();
 		mTreeNode *cur = root->child;
@@ -73,7 +119,7 @@ public:
 		return false;
 	}
 
-	/** Returns if there is any word in the trie that starts with the given prefix. */
+	//搜索前缀
 	bool startsWith(string prefix) {
 		int len = prefix.size();
 		mTreeNode *cur = root->child;
@@ -88,3 +134,4 @@ public:
 		return true;
 	}
 };
+*/
