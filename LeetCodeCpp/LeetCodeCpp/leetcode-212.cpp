@@ -6,9 +6,9 @@
 using namespace std;
 
 struct mTreeNode {
-	int end;
+	bool end;
 	mTreeNode* child[26];
-	mTreeNode() : end(0) {
+	mTreeNode() : end(false) {
 		memset(child, 0, sizeof(child));
 	}
 };
@@ -31,7 +31,7 @@ public:
 				cur->child[word[i] - 'a'] = new mTreeNode();
 			cur = cur->child[word[i] - 'a'];
 		}
-		cur->end = 1;
+		cur->end = true;
 	}
 
 	/** Returns if the word is in the trie. */
