@@ -6,6 +6,7 @@ using namespace std;
 class Solution {
 public:
 	int hIndex(vector<int>& citations) {
+		//num[i]表示引用次数为i的文章有几篇，大于n的按n处理
 		vector<int> num(citations.size() + 1, 0);
 		for (int i = 0; i < citations.size(); i++) {
 			if (citations[i] > citations.size())
