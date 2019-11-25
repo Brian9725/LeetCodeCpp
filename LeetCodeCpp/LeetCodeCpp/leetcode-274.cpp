@@ -6,15 +6,16 @@ using namespace std;
 class Solution {
 public:
 	int hIndex(vector<int>& citations) {
+		int len = citations.size();
 		//num[i]表示引用次数为i的文章有几篇，大于n的按n处理
-		vector<int> num(citations.size() + 1, 0);
-		for (int i = 0; i < citations.size(); i++) {
-			if (citations[i] > citations.size())
-				citations[i] = citations.size();
+		vector<int> num(len + 1, 0);
+		for (int i = 0; i < len; i++) {
+			if (citations[i] > len)
+				citations[i] = len;
 			num[citations[i]]++;
 		}
 		int result = 0;
-		for (int i = citations.size(); i >= 0; i--) {
+		for (int i = len; i >= 0; i--) {
 			if (num[i] + result < i)
 				result += num[i];
 			else
