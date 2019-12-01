@@ -62,14 +62,3 @@ public:
 		}
 	}
 };
-
-int main() {
-	vector<vector<char>> v = {
-		{'X', 'O', 'X', 'O', 'X', 'O'}, 
-		{'O', 'X', 'O', 'X', 'O', 'X'}, 
-		{'X', 'O', 'X', 'O', 'X', 'O'}, 
-		{'O', 'X', 'O', 'X', 'O', 'X'}
-	};
-	Solution().solve(v);
-	return 0;
-}
