@@ -323,6 +323,7 @@
     <ClCompile Include="leetcode-71.cpp" />
     <ClCompile Include="leetcode-714.cpp" />
     <ClCompile Include="leetcode-72.cpp" />
+    <ClCompile Include="leetcode-728.cpp" />
     <ClCompile Include="leetcode-73.cpp" />
     <ClCompile Include="leetcode-74.cpp" />
     <ClCompile Include="leetcode-75.cpp" />
