@@ -53,17 +53,11 @@ public:
 		int len = s.size(), idx = 0, num = 0, tempIdx = idx;
 		opStack.push('#');
 		while (idx < len) {
-			//如果遇到空格则跳过
-			if (s[idx] == ' ') {
-				idx++; continue;
-			}
 			//如果遇到两个#，则表明所有运算已经结束
-			if (prior(opStack.top(), s[idx]) == 10)
-				break;
+			if (prior(opStack.top(), s[idx]) == 10) break;
 			num = 0; tempIdx = idx;
 			while (s[idx] >= '0' && s[idx] <= '9') {
-				num = num * 10 + (s[idx] - '0');
-				idx++;
+				num = num * 10 + (s[idx] - '0'); idx++;
 			}
 			//如果tempIdx!=idx，则表明遇到的是一个数字
 			if (tempIdx != idx) {
@@ -74,12 +68,10 @@ public:
 			switch (prior(opStack.top(), s[idx])) {
 				//如果当前的运算符优先级高，将其入栈
 			case -1:
-				opStack.push(s[idx]); idx++;
-				break;
+				opStack.push(s[idx]); idx++; break;
 				//遇到左右括号说明括号中的已经计算完成，弹出左括号即可
 			case 0:
-				opStack.pop(); idx++;
-				break;
+				opStack.pop(); idx++; break;
 				//如果栈顶运算符优先级高，将其计算出来并将结果存入numStack
 			case 1:
 				char oper = opStack.top(); opStack.pop();
