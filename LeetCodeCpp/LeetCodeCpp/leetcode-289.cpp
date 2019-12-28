@@ -8,9 +8,9 @@ public:
 	int judge(vector<vector<int>>& board, int x, int y) {
 		int res = 0;
 		for (int i = x - 1; i <= x + 1; ++i) {
-			if (i < 0 || i >= board.size()) continue;
+			if (i < 0 || i >= (int)board.size()) continue;
 			for (int j = y - 1; j <= y + 1; ++j) {
-				if (j < 0 || j >= board[0].size()) continue;
+				if (j < 0 || j >= (int)board[0].size()) continue;
 				if (i == x && j == y) continue;
 				if (board[i][j] == 1 || board[i][j] == 2) res++;
 			}
