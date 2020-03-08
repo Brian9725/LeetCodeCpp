@@ -639,9 +639,6 @@
     <ClCompile Include="leetcode-201.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="leetcod-232.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="leetcode-225.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -697,6 +694,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="leetcode-328.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="leetcode-232.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="leetcode-139.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
