@@ -37,19 +37,17 @@ public:
 
 	/*另一种方法
 	int lengthOfLongestSubstring(string s) {
+		if (s.size() == 0) return 0;
 		//a[x]表示x最后出现的位置
-		int a[256] = { 0 };
-		if (s.size() == 0)
-			return 0;
-		//max表示当前最大值，curr表示以第i-1个字符结尾的最大子串起始位置，
+		int a[128] = { -1 };
+		for (int i = 0; i < 128; i++) a[i] = -1;
+		//max表示当前最大值，curr表示以第i个字符结尾的最大子串起始位置，
 		int max = 0, curr = 0, len = s.size();
-		for (int i = 1; i <= len; i++) {
-			//当s[i-1]在curr之后出现过时将字串位置设置为当前字符出现的最后位置
-			if (a[s[i - 1]] > curr)
-				curr = a[s[i - 1]];
-			if (i - curr > max)
-				max = i - curr;
-			a[s[i - 1]] = i;
+		for (int i = 0; i < len; i++) {
+			//当s[i]在curr之后出现过时将字串位置设置为当前字符出现的最后位置
+			if (a[s[i]] >= curr) curr = a[s[i]] + 1;
+			if (i - curr + 1> max) max = i - curr + 1;
+			a[s[i]] = i;
 		}
 		return max;
 	}
